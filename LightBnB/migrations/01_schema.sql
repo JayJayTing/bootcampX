@@ -20,12 +20,12 @@ CREATE TABLE properties(
   cover_photo_url text,
   cost_per_night  decimal not null,
   street text not null,
-  parking_spaces text,
+  parking_spaces smallint,
   number_of_bathrooms int,
   number_of_bedrooms int,
   country text not null,
   city text not null,
-  province text not null,
+  provence text not null,
   post_code text not null,
   active boolean not null
 );
@@ -50,24 +50,3 @@ CREATE TABLE property_reviews(
     rating smallint, 
     message text
 );
-
-
-
-INSERT INTO users(name, email, password)
-VALUES ('jayjay','abc@gmail.com', 'abc');
-        
-
-INSERT INTO properties(owner_id, title, thumbnail_photo_url, cover_photo_url,cost_per_night, 
-street, parking_spaces, number_of_bathrooms, 
-number_of_bedrooms, country, city, province, post_code, active)
-VALUES(1, 'HI', 'url1', 'url2', 45 ,'street1', 'parking1', 1, 1, 'country1', 'city1','province1' , 'post code 1', true);
-
-
-
-INSERT INTO reservations(start_date, end_date, property_id, guest_id)
-VALUES('01-07-1804', '02-08-1905', 1, 1);
-
-
-
-INSERT INTO property_reviews(guest_id, reservation_id, property_id, rating)
-VALUES(1, 1, 1, 10);
